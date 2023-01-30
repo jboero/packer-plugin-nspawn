@@ -1,3 +1,3 @@
-data "scaffolding-my-datasource" "mock-data" {
+data "nspawn" "mock-data" {
   mock = "mock-config"
 }

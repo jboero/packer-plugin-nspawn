@@ -1,13 +1,13 @@
 ---
 description: >
-  The scaffolding post-processor is used to export Packer Scaffolding builds.
-page_title: Scaffolding - Post-Processors
-nav_title: Scaffolding
+  The nspawn post-processor is used to export Packer nspawn builds.
+page_title: nspawn - Post-Processors
+nav_title: nspawn
 ---
 
-# Scaffolding
+# nspawn
 
-Type: `scaffolding`
+Type: `nspawn`
 
 <!--
   Include a short description about the post-processor. This is a good place
@@ -15,7 +15,7 @@ Type: `scaffolding`
   be helpful to a user. See https://www.packer.io/docs/provisioners/null
 -->
 
-The scaffolding post-processor is used to export Packer Scaffolding builds.
+The nspawn post-processor is used to export Packer nspawn builds.
 
 
 <!-- Post-Processor Configuration Fields -->
@@ -44,15 +44,15 @@ The scaffolding post-processor is used to export Packer Scaffolding builds.
 
 
 ```hcl
- source "scaffolding" "example" {
+ source "nspawn" "example" {
    mock = "jay"
  }
 
  build {
-   sources = ["source.scaffolding.example"]
+   sources = ["source.nspawn.example"]
 
-   post-processor "scaffolding" {
-     mock = "builds/scaffolding.box"
+   post-processor "nspawn" {
+     mock = "builds/nspawn.box"
    }
  }
 ```
