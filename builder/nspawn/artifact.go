@@ -1,4 +1,4 @@
-package scaffolding
+package nspawn
 
 // packersdk.Artifact implementation
 type Artifact struct {

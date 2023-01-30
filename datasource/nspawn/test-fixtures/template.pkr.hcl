@@ -1,10 +1,10 @@
-data "scaffolding-my-datasource" "test" {
+data "nspawn-my-datasource" "test" {
   mock = "mock-config"
 }
 
 locals {
-  foo = data.scaffolding-my-datasource.test.foo
-  bar = data.scaffolding-my-datasource.test.bar
+  foo = data.nspawn-my-datasource.test.foo
+  bar = data.nspawn-my-datasource.test.bar
 }
 
 source "null" "basic-example" {

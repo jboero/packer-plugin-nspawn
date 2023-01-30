@@ -1,4 +1,4 @@
-module packer-plugin-scaffolding
+module packer-plugin-nspawn
 
 go 1.17
 

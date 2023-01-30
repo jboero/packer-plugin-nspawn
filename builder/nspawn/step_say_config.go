@@ -1,4 +1,4 @@
-package scaffolding
+package nspawn
 
 import (
 	"context"
