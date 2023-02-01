@@ -34,7 +34,6 @@ func (*FlatConfig) HCL2Spec() map[string]hcldec.Spec {
 // Where the contents of a field with a `mapstructure:,squash` tag are bubbled up.
 type FlatDatasourceOutput struct {
 	Foo *string `mapstructure:"foo" cty:"foo" hcl:"foo"`
-	Bar *string `mapstructure:"bar" cty:"bar" hcl:"bar"`
 }
 
 // FlatMapstructure returns a new FlatDatasourceOutput.
@@ -50,7 +49,6 @@ func (*DatasourceOutput) FlatMapstructure() interface{ HCL2Spec() map[string]hcl
 func (*FlatDatasourceOutput) HCL2Spec() map[string]hcldec.Spec {
 	s := map[string]hcldec.Spec{
 		"foo": &hcldec.AttrSpec{Name: "foo", Type: cty.String, Required: false},
-		"bar": &hcldec.AttrSpec{Name: "bar", Type: cty.String, Required: false},
 	}
 	return s
 }

@@ -1,3 +1,4 @@
+/*
 packer {
   required_plugins {
     nspawn = {
@@ -6,6 +7,7 @@ packer {
     }
   }
 }
+*/
 
 source "nspawn" "foo-example" {
   mock = local.foo

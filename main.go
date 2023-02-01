@@ -12,8 +12,8 @@ import (
 
 func main() {
 	pps := plugin.NewSet()
-	pps.RegisterBuilder(plugin.DEFAULT_NAME, new(nspawn.Builder))
-	pps.RegisterDatasource(plugin.DEFAULT_NAME, new(nspawnData.Datasource))
+	pps.RegisterBuilder("build", new(nspawn.Builder))
+	pps.RegisterDatasource("images", new(nspawnData.Datasource))
 	pps.SetVersion(nspawnVersion.PluginVersion)
 	err := pps.Run()
 	if err != nil {
