@@ -1,3 +1,4 @@
+/*
 packer {
   required_plugins {
     nspawn = {
@@ -6,21 +7,20 @@ packer {
     }
   }
 }
+*/
 
-source "nspawn" "foo-example" {
-  mock = local.foo
-}
-
-source "nspawn" "bar-example" {
-  mock = local.bar
+source "nspawn-machine" "basic-example" {
+  image = "rawhide"
 }
 
 build {
   sources = [
-    "source.nspawn.foo-example",
+    "source.nspawn-machine.basic-example"
   ]
 
-  source "source.nspawn.bar-example" {
-    name = "bar"
+  provisioner "shell-local" {
+    inline = [
+      "echo Hello from build container!",
+    ]
   }
 }

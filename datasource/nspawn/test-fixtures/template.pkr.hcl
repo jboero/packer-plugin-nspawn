@@ -1,10 +1,9 @@
-data "nspawn-my-datasource" "test" {
-  mock = "mock-config"
+data "nspawn-images" "test" { 
 }
 
 locals {
-  foo = data.nspawn-my-datasource.test.foo
-  bar = data.nspawn-my-datasource.test.bar
+  machines = data.nspawn-images.test.machines
+  images = data.nspawn-images.test.images
 }
 
 source "null" "basic-example" {
@@ -18,8 +17,8 @@ build {
 
   provisioner "shell-local" {
     inline = [
-      "echo foo: ${local.foo}",
-      "echo bar: ${local.bar}",
+      "echo machines: ${local.machines}",
+      "echo images: ${local.images}",
     ]
   }
 }

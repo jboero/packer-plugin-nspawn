@@ -1,15 +1,15 @@
-source "nspawn-my-builder" "basic-example" {
-  mock = "mock-config"
+source "nspawn-machine" "basic-example" {
+  image = "rawhide"
 }
 
 build {
   sources = [
-    "source.nspawn-my-builder.basic-example"
+    "source.nspawn-machine.basic-example"
   ]
 
   provisioner "shell-local" {
     inline = [
-      "echo build generated data: ${build.GeneratedMockData}",
+      "echo Hello from build container!",
     ]
   }
 }

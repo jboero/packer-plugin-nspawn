@@ -1,5 +1,7 @@
 package nspawn
 
+import "fmt"
+
 // packersdk.Artifact implementation
 type Artifact struct {
 	// StateData should store data such as GeneratedData
@@ -12,7 +14,7 @@ func (*Artifact) BuilderId() string {
 }
 
 func (a *Artifact) Files() []string {
-	return []string{}
+	return []string{fmt.Sprintf("%v", a.StateData["image"])}
 }
 
 func (*Artifact) Id() string {

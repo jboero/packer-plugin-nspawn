@@ -1,3 +1,2 @@
-data "nspawn" "mock-data" {
-  mock = "mock-config"
+data "nspawn-images" "test" {
 }
