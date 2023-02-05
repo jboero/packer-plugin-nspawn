@@ -1,10 +1,9 @@
-data "nspawn-images" "test" {
-  mock = "mock"
+data "nspawn-images" "test" { 
 }
 
 locals {
   machines = data.nspawn-images.test.machines
-  images = data.nspawnn-images.test.images
+  images = data.nspawn-images.test.images
 }
 
 source "null" "basic-example" {
