@@ -24,7 +24,7 @@ const BuilderId = "nspawn.builder"
 type Config struct {
 	common.PackerConfig `mapstructure:",squash"`
 	Image               string `mapstructure:"image"`
-	TmpImage            string
+	TmpImage            string `mapstructure:"tmp_image"`
 }
 
 type Builder struct {
